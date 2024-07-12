@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".MainActivity">
+    <EditText
+        android:id="@+id/etEmpName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter employee name"
+        android:text="John Doe"/>
+    <EditText
+        android:id="@+id/etHoursWorked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter hours worked"
+        android:text="40"/>
+    <EditText
+        android:id="@+id/etHourlyRate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter hourly rate"
+        android:text="120.00"/>
+    <Switch
+        android:id="@+id/swIsManager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Are you a manager?"/>
+    <CheckBox
+        android:id="@+id/cbDeductTax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Automatically deduct income tax?"/>
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"/>
+</LinearLayout>
