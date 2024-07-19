@@ -2,11 +2,6 @@ package com.example.employeeapp
 
 import java.io.Serializable
 
-enum class TaxRate(val rate: Double) {
-    MANAGER(0.15),
-    NO_MANAGER(0.05)
-}
-
 class Employee: Serializable {
     var empName: String = ""
     var hoursWorked: Double = 0.0
@@ -45,12 +40,9 @@ class Employee: Serializable {
     }
 
     private fun calculateTaxAmount(): Double {
-        if (this.autoDeductIncomeTax == true) {
-            var taxRate = TaxRate.NO_MANAGER.rate
-            if (this.isManager == true) {
-                taxRate = TaxRate.MANAGER.rate
-            }
-            return this.weeklyPay * taxRate
+        if (this.autoDeductIncomeTax) {
+            val taxRate = if (this.isManager) TaxRate.MANAGER.rate else TaxRate.NO_MANAGER.rate
+            return weeklyPay * taxRate
         }
         return 0.0
     }
